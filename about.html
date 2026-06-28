@@ -1,88 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - CR7 - The Last Dance</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐐</text></svg>">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – CR7 The Last Dance</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇹</text></svg>">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">
-                <span>🇵🇹</span> CR7<span class="logo-number">7</span> <span class="logo-text">The Last Dance</span>
-            </a>
-            <nav class="main-nav" id="mainNav">
-                <a href="index.html">Home</a>
-                <a href="news.html">News</a>
-                <a href="live-scores.html">Live Scores</a>
-                <a href="world-cup.html">World Cup 2026</a>
-                <a href="stats.html">Stats</a>
-                <a href="about.html" class="active">About</a>
-            </nav>
-            <div class="header-actions">
-                <select class="lang-switch" onchange="changeLanguage(this.value)">
-                    <option value="en">🇬🇧 EN</option>
-                    <option value="ar">🇸🇦 AR</option>
-                    <option value="fr">🇫🇷 FR</option>
-                    <option value="pt">🇵🇹 PT</option>
-                    <option value="es">🇪🇸 ES</option>
-                </select>
-                <button class="dark-toggle" id="darkToggle">🌙</button>
-                <button class="menu-toggle" id="menuToggle">☰</button>
-            </div>
-        </div>
-    </header>
+  <div id="progress-bar"></div>
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo"><span class="logo-flag">🇵🇹</span> CR7 <span class="logo-badge">7</span> The Last Dance</a>
+      <div class="header-top-right">
+        <select class="lang-select" id="langSelect"><option value="en">🇬🇧 EN</option><option value="ar">🇸🇦 AR</option><option value="fr">🇫🇷 FR</option><option value="pt">🇵🇹 PT</option><option value="es">🇪🇸 ES</option></select>
+        <button class="icon-btn" id="darkBtn">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+    <nav class="header-nav" id="mainNav">
+      <a href="index.html">Home</a><a href="news.html">News</a><a href="live-scores.html">Live Scores</a><a href="world-cup.html">World Cup 2026</a><a href="stats.html">Stats</a><a href="about.html" class="active">About</a>
+      <a href="live-scores.html" class="nav-live">🔴 LIVE</a>
+    </nav>
+  </header>
+  <div class="flag-stripe"><div class="s-green"></div><div class="s-red"></div></div>
+  <div style="background:linear-gradient(135deg,var(--green-dark),var(--red-dark));color:#fff;padding:3rem 1.5rem;text-align:center;">
+    <h1 style="font-size:2rem;font-weight:900;">About This Blog</h1>
+    <p style="opacity:.8;margin-top:.3rem;">Made by a fan, for fans of the greatest of all time</p>
+  </div>
+  <div class="flag-stripe"><div class="s-green"></div><div class="s-red"></div></div>
 
-    <main class="container" style="max-width:800px;margin:2rem auto;padding:0 1.5rem;">
-        <h1 style="margin:2rem 0;">🐐 About CR7 - The Last Dance</h1>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>Our Mission</h2>
-            <p style="font-size:1.1rem;line-height:1.8;">Welcome to <strong>CR7 - The Last Dance</strong>, the ultimate fan hub dedicated to Cristiano Ronaldo's final World Cup journey in 2026. We cover every moment of the legend's last dance on football's biggest stage.</p>
-        </section>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>The GOAT</h2>
-            <p style="font-size:1.1rem;line-height:1.8;">Cristiano Ronaldo dos Santos Aveiro — 5x Ballon d'Or, 5x Champions League, Euro 2016 champion, Nations League 2019 winner, and the all-time top scorer in football history. This is his legacy.</p>
-        </section>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>What We Cover</h2>
-            <ul style="font-size:1.1rem;line-height:2;list-style:none;padding:0;">
-                <li>📰 Latest CR7 & Portugal news</li>
-                <li>🔴 Live match scores & updates</li>
-                <li>📊 Complete career statistics</li>
-                <li>🏆 World Cup 2026 groups, schedule & bracket</li>
-                <li>📱 Social media feeds</li>
-                <li>🇵🇹 Portugal national team coverage</li>
-                <li>🟡 Al Nassr club updates</li>
-            </ul>
-        </section>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>The Creator</h2>
-            <p style="font-size:1.1rem;line-height:1.8;">This site was created by <strong>Zer Salah</strong>, a passionate football fan who believes Cristiano Ronaldo is the greatest of all time.</p>
-            <p style="font-size:1.1rem;line-height:1.8;margin-top:1rem;">The Greatest of All Time. One Final World Cup. One GOAT.</p>
-        </section>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>Connect</h2>
-            <p style="font-size:1.1rem;line-height:1.8;">
-                Follow CR7 on:
-                <a href="https://twitter.com/Cristiano" target="_blank" style="color:var(--primary);">𝕏 Twitter</a> •
-                <a href="https://instagram.com/cristiano" target="_blank" style="color:var(--primary);">📷 Instagram</a> •
-                <a href="https://youtube.com/@cristiano" target="_blank" style="color:var(--primary);">▶ YouTube</a>
-            </p>
-        </section>
-    </main>
+  <main class="container" style="padding:3rem 1.5rem;max-width:800px;">
+    <div class="chart-card reveal" style="margin-bottom:2rem;">
+      <h2 style="color:var(--red);margin-bottom:1rem;">🇵🇹 About CR7 – The Last Dance</h2>
+      <p style="color:var(--text-2);line-height:1.8;margin-bottom:1rem;">This fan blog is dedicated to following Cristiano Ronaldo's incredible final chapter — his 6th and last World Cup in 2026 with Portugal. Built with passion, this site tracks every goal, every match, and every milestone of his legendary career.</p>
+      <p style="color:var(--text-2);line-height:1.8;margin-bottom:1rem;">From his humble beginnings in Madeira to becoming the greatest goalscorer of all time, CR7's journey has been one of unmatched dedication, sacrifice, and brilliance. In 2026, he chases the one trophy that has so far eluded him — the FIFA World Cup.</p>
+      <p style="color:var(--text-2);line-height:1.8;"><strong style="color:var(--red)">SIUUU!</strong> — This blog is not affiliated with Cristiano Ronaldo or his official representatives.</p>
+    </div>
 
-    <footer class="site-footer">
-        <div class="footer-bottom"><p>© 2025 CR7 - The Last Dance. Made with ❤️ by Zer Salah</p></div>
-    </footer>
+    <div class="wc-grid reveal">
+      <div class="wc-card"><h4>🎯 Our Mission</h4><p>Document CR7's final World Cup journey and celebrate the greatest footballer of all time</p></div>
+      <div class="wc-card"><h4>🌍 Languages</h4><p>Available in English, Arabic, French, Portuguese, and Spanish for fans worldwide</p></div>
+      <div class="wc-card"><h4>📊 Features</h4><p>Live scores, career statistics, match reports, and the AI-powered CR7Bot chatbot</p></div>
+      <div class="wc-card"><h4>👨‍💻 Made By</h4><p>Built by Zer Salah — a dedicated Ronaldo fan since 2006. <em>Siuuuu!</em></p></div>
+    </div>
+  </main>
 
-    <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">© 2026 CR7 – The Last Dance. Made with ❤️ by Zer Salah. Fan site — not affiliated with Cristiano Ronaldo.</div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
