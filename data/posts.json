@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "id": "ronaldo-wc26-dream",
+      "lang": "en",
+      "title": "Cristiano Ronaldo: '2026 Is My Final World Cup Dream'",
+      "excerpt": "CR7 confirms 2026 will be his last World Cup appearance with Portugal, aiming to end his career on the highest note.",
+      "category": "World Cup 2026",
+      "date": "2025-06-20",
+      "readTime": "4",
+      "image": "images/ronaldo-portugal.jpg",
+      "content": "<h2>The Last Dance</h2><p>Cristiano Ronaldo has officially declared that the 2026 FIFA World Cup will be his final appearance on football's biggest stage. The Portuguese legend, who will be 41 during the tournament, told reporters: <em>'This is my last World Cup. I've given everything for Portugal, and I want to finish on the highest note possible.'</em></p><h2>Portugal's Golden Generation</h2><p>With a squad featuring Bruno Fernandes, Rafael Leão, Bernardo Silva, and young talents like João Neves, Portugal is considered one of the favorites for the tournament.</p><h2>CR7's World Cup Journey</h2><p>This marks Ronaldo's 6th World Cup appearance — a record he shares with very few players in history.</p><table><tr><th>Year</th><th>Host</th><th>Result</th><th>Goals</th></tr><tr><td>2006</td><td>Germany</td><td>4th Place</td><td>1</td></tr><tr><td>2010</td><td>South Africa</td><td>Round of 16</td><td>1</td></tr><tr><td>2014</td><td>Brazil</td><td>Group Stage</td><td>1</td></tr><tr><td>2018</td><td>Russia</td><td>Round of 16</td><td>4</td></tr><tr><td>2022</td><td>Qatar</td><td>Quarter-Finals</td><td>1</td></tr><tr><td>2026</td><td>USA/Canada/Mexico</td><td>???</td><td>???</td></tr></table>"
+    },
+    {
+      "id": "ronaldo-hattrick-alnassr",
+      "lang": "en",
+      "title": "Ronaldo Hat-trick Fires Al Nassr to Victory",
+      "excerpt": "Cristiano Ronaldo scored a stunning hat-trick as Al Nassr dominated their latest Saudi Pro League fixture.",
+      "category": "Match Report",
+      "date": "2025-06-18",
+      "readTime": "3",
+      "image": "images/ronaldo-hattrick.jpg",
+      "content": "<h2>Masterclass Performance</h2><p>Cristiano Ronaldo rolled back the years with a magnificent hat-trick as Al Nassr cruised to a 4-0 victory. The Portuguese superstar opened the scoring in the 15th minute with a trademark penalty, before adding two more in the second half.</p><p>The 40-year-old showed he's still got the hunger and quality that made him the all-time top scorer, taking his tally for Al Nassr beyond 68 goals.</p>"
+    },
+    {
+      "id": "portugal-qualification",
+      "lang": "en",
+      "title": "Portugal's Path to World Cup 2026 Qualification",
+      "excerpt": "How Portugal can secure their spot in the expanded 48-team World Cup tournament.",
+      "category": "Analysis",
+      "date": "2025-06-15",
+      "readTime": "5",
+      "image": "images/portugal-team.jpg",
+      "content": "<h2>Road to 2026</h2><p>With the expanded 48-team format, European qualification provides 16 spots. Portugal, ranked among the top European nations, are expected to qualify comfortably from their group.</p><p>Under Roberto Martínez, Portugal have developed a more balanced approach while maintaining their attacking flair. The emergence of young talents alongside experienced leaders like Ronaldo makes them serious contenders.</p>"
+    },
+    {
+      "id": "ronaldo-records-2025",
+      "lang": "en",
+      "title": "Ronaldo's Records That May Never Be Broken",
+      "excerpt": "A look at the incredible records CR7 holds that could stand forever.",
+      "category": "Analysis",
+      "date": "2025-06-10",
+      "readTime": "6",
+      "image": "images/ronaldo-records.jpg",
+      "content": "<h2>Immortal Records</h2><p>As Cristiano Ronaldo approaches his final World Cup, we look at the records that define his legacy:</p><ul><li>All-time top scorer: 920+ goals</li><li>Champions League top scorer: 140 goals</li><li>Most international goals: 132</li><li>Most international caps (active): 212</li><li>Only player to score in 5 World Cups</li><li>Most Euro appearances and goals</li></ul>"
+    },
+    {
+      "id": "رونالدو-مونديال-2026",
+      "lang": "ar",
+      "title": "رونالدو: 2026 سيكون آخر مونديال لي",
+      "excerpt": "كريستيانو يؤكد أن كأس العالم 2026 ستكون مشاركته الأخيرة مع البرتغال",
+      "category": "كأس العالم 2026",
+      "date": "2025-06-20",
+      "readTime": "4",
+      "image": "images/ronaldo-portugal.jpg",
+      "content": "<h2>الرقصة الأخيرة</h2><p>أعلن كريستيانو رونالدو رسمياً أن كأس العالم 2026 ستكون آخر ظهور له في أكبر مسرح كروي. الأسطورة البرتغالية، الذي سيكون عمره 41 عاماً خلال البطولة، قال للصحفيين: <em>'هذا آخر مونديال لي. قدمت كل شيء للبرتغال، وأريد أن أنهي المسيرة بأفضل صورة.'</em></p>"
+    },
+    {
+      "id": "رونالدو-هاتريك-النصر",
+      "lang": "ar",
+      "title": "هاتريك رونالدو يقود النصر للفوز",
+      "excerpt": "سجل كريستيانو رونالدو ثلاثة أهداف رائعة في مباراة النصر",
+      "category": "تقرير مباراة",
+      "date": "2025-06-18",
+      "readTime": "3",
+      "image": "images/ronaldo-hattrick.jpg",
+      "content": "<h2>أداء استثنائي</h2><p>عاد كريستيانو رونالدو بالزمن إلى الوراء بهاتريك رائع قاد به النصر للفوز 4-0. افتتح النجم البرتغالي التسجيل في الدقيقة 15 من ركلة جزاء، قبل أن يضيف هدفين آخرين في الشوط الثاني.</p>"
+    }
+  ]
+}
