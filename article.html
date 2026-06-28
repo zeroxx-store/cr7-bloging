@@ -1,106 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article - CR7 - The Last Dance</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐐</text></svg>">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article – CR7 The Last Dance</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇹</text></svg>">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">
-                <span>🇵🇹</span> CR7<span class="logo-number">7</span> <span class="logo-text">The Last Dance</span>
-            </a>
-            <nav class="main-nav" id="mainNav">
-                <a href="index.html">Home</a>
-                <a href="news.html">News</a>
-                <a href="live-scores.html">Live Scores</a>
-                <a href="world-cup.html">World Cup 2026</a>
-                <a href="stats.html">Stats</a>
-                <a href="about.html">About</a>
-            </nav>
-            <div class="header-actions">
-                <select class="lang-switch" onchange="changeLanguage(this.value)">
-                    <option value="en">🇬🇧 EN</option>
-                    <option value="ar">🇸🇦 AR</option>
-                    <option value="fr">🇫🇷 FR</option>
-                    <option value="pt">🇵🇹 PT</option>
-                    <option value="es">🇪🇸 ES</option>
-                </select>
-                <button class="dark-toggle" id="darkToggle">🌙</button>
-            </div>
-        </div>
-    </header>
+  <div id="progress-bar"></div>
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo"><span class="logo-flag">🇵🇹</span> CR7 <span class="logo-badge">7</span> The Last Dance</a>
+      <div class="header-top-right">
+        <select class="lang-select" id="langSelect"><option value="en">🇬🇧 EN</option><option value="ar">🇸🇦 AR</option><option value="fr">🇫🇷 FR</option><option value="pt">🇵🇹 PT</option><option value="es">🇪🇸 ES</option></select>
+        <button class="icon-btn" id="darkBtn">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+    <nav class="header-nav" id="mainNav">
+      <a href="index.html">Home</a><a href="news.html" class="active">News</a><a href="live-scores.html">Live Scores</a><a href="world-cup.html">World Cup 2026</a><a href="stats.html">Stats</a><a href="about.html">About</a>
+      <a href="live-scores.html" class="nav-live">🔴 LIVE</a>
+    </nav>
+  </header>
 
-    <main class="container" style="max-width:800px;margin:2rem auto;padding:0 1.5rem;">
-        <article id="articleContent">
-            <p style="text-align:center;padding:4rem;">Loading article...</p>
-        </article>
+  <div class="article-hero" id="articleHero"></div>
+  <div class="article-content-wrap">
+    <a href="news.html" style="font-size:.83rem;color:var(--text-3);display:inline-flex;align-items:center;gap:.3rem;margin-bottom:1.2rem;">← Back to News</a>
+    <h1 id="articleTitle" style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;line-height:1.2;margin-bottom:.75rem;"></h1>
+    <div id="articleMeta" style="font-size:.82rem;color:var(--text-3);margin-bottom:2rem;display:flex;gap:.5rem;flex-wrap:wrap;"></div>
+    <div class="article-content" id="articleContent"></div>
+    <div class="share-row">
+      <button class="share-btn x" data-share="x">𝕏 Share</button>
+      <button class="share-btn fb" data-share="fb">Facebook</button>
+      <button class="share-btn wa" data-share="wa">WhatsApp</button>
+      <button class="share-btn tg" data-share="tg">Telegram</button>
+      <button class="share-btn copy" data-share="copy">🔗 Copy Link</button>
+    </div>
+    <section>
+      <h2 class="section-title" style="font-size:1.1rem;margin-bottom:1rem;">Related Articles</h2>
+      <div class="posts-grid" id="relatedPosts"></div>
+    </section>
+  </div>
 
-        <div class="sharing-buttons">
-            <button class="share-btn twitter" onclick="shareArticle('twitter')">𝕏 Tweet</button>
-            <button class="share-btn facebook" onclick="shareArticle('facebook')">📘 Share</button>
-            <button class="share-btn whatsapp" onclick="shareArticle('whatsapp')">💬 WhatsApp</button>
-            <button class="share-btn telegram" onclick="shareArticle('telegram')">📨 Telegram</button>
-        </div>
-
-        <a href="news.html" style="display:inline-block;margin:1rem 0;color:var(--primary);">← Back to News</a>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-bottom">
-            <p>© 2025 CR7 - The Last Dance. Made with ❤️ by Zer Salah</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const articleId = urlParams.get('id');
-        
-        async function loadArticle() {
-            if (!articleId) {
-                document.getElementById('articleContent').innerHTML = '<p>Article not found.</p>';
-                return;
-            }
-            try {
-                const response = await fetch('data/posts.json');
-                const data = await response.json();
-                const post = data.posts.find(p => p.id === articleId);
-                if (!post) {
-                    document.getElementById('articleContent').innerHTML = '<p>Article not found.</p>';
-                    return;
-                }
-                document.title = post.title + ' - CR7 - The Last Dance';
-                document.getElementById('articleContent').innerHTML = `
-                    <h1 style="font-size:2rem;margin-bottom:0.5rem;">${post.title}</h1>
-                    <div style="color:var(--text-light);margin-bottom:1.5rem;">
-                        <span>📅 ${post.date}</span> • <span>⏱ ${post.readTime} min read</span> • <span>🏷 ${post.category}</span>
-                    </div>
-                    ${post.image ? `<img src="${post.image}" alt="${post.title}" style="width:100%;border-radius:12px;margin-bottom:1.5rem;">` : ''}
-                    <div style="font-size:1.1rem;line-height:1.9;">${post.content || 'Full article coming soon...'}</div>
-                `;
-            } catch (error) {
-                document.getElementById('articleContent').innerHTML = '<p>Error loading article.</p>';
-            }
-        }
-        
-        function shareArticle(platform) {
-            const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent(document.title);
-            const links = {
-                twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
-                facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-                whatsapp: `https://wa.me/?text=${title}%20${url}`,
-                telegram: `https://t.me/share/url?url=${url}&text=${title}`
-            };
-            window.open(links[platform], '_blank', 'width=600,height=400');
-        }
-        
-        loadArticle();
-    </script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">© 2026 CR7 – The Last Dance. Made with ❤️ by Zer Salah.</div>
+    </div>
+  </footer>
+  <div class="chatbot-window" id="chatWindow">
+    <div class="chatbot-head">
+      <div class="chatbot-avatar">CR7</div>
+      <div class="chatbot-head-info"><h4>CR7Bot 🤖</h4><p>Ask me anything about Ronaldo</p></div>
+      <button class="chatbot-close" id="chatClose">✕</button>
+    </div>
+    <div class="chatbot-msgs" id="chatMsgs"><div class="chat-msg bot">⚽ Olá! I'm CR7Bot. Ask me anything about Cristiano Ronaldo!</div></div>
+    <div class="chatbot-footer">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask about CR7...">
+      <button class="chat-send" id="chatSend">➤</button>
+    </div>
+  </div>
+  <button class="chatbot-fab" id="chatFab">🐐</button>
+  <script src="js/main.js"></script>
 </body>
 </html>

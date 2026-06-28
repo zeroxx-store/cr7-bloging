@@ -1,105 +1,132 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stats - CR7 - The Last Dance</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐐</text></svg>">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats – CR7 The Last Dance</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇹</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">
-                <span>🇵🇹</span> CR7<span class="logo-number">7</span> <span class="logo-text">The Last Dance</span>
-            </a>
-            <nav class="main-nav" id="mainNav">
-                <a href="index.html">Home</a>
-                <a href="news.html">News</a>
-                <a href="live-scores.html">Live Scores</a>
-                <a href="world-cup.html">World Cup 2026</a>
-                <a href="stats.html" class="active">Stats</a>
-                <a href="about.html">About</a>
-            </nav>
-            <div class="header-actions">
-                <select class="lang-switch" onchange="changeLanguage(this.value)">
-                    <option value="en">🇬🇧 EN</option>
-                    <option value="ar">🇸🇦 AR</option>
-                    <option value="fr">🇫🇷 FR</option>
-                    <option value="pt">🇵🇹 PT</option>
-                    <option value="es">🇪🇸 ES</option>
-                </select>
-                <button class="dark-toggle" id="darkToggle">🌙</button>
-                <button class="menu-toggle" id="menuToggle">☰</button>
-            </div>
+  <div id="progress-bar"></div>
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo"><span class="logo-flag">🇵🇹</span> CR7 <span class="logo-badge">7</span> The Last Dance</a>
+      <div class="header-top-right">
+        <select class="lang-select" id="langSelect"><option value="en">🇬🇧 EN</option><option value="ar">🇸🇦 AR</option><option value="fr">🇫🇷 FR</option><option value="pt">🇵🇹 PT</option><option value="es">🇪🇸 ES</option></select>
+        <button class="icon-btn" id="darkBtn">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+    <nav class="header-nav" id="mainNav">
+      <a href="index.html">Home</a><a href="news.html">News</a><a href="live-scores.html">Live Scores</a><a href="world-cup.html">World Cup 2026</a><a href="stats.html" class="active">Stats</a><a href="about.html">About</a>
+      <a href="live-scores.html" class="nav-live">🔴 LIVE</a>
+    </nav>
+  </header>
+
+  <div class="flag-stripe"><div class="s-green"></div><div class="s-red"></div></div>
+  <div class="stats-hero-bar">
+    <h1>📊 CR7 Career Statistics</h1>
+    <p>The numbers that define the greatest of all time</p>
+  </div>
+  <div class="flag-stripe"><div class="s-green"></div><div class="s-red"></div></div>
+
+  <main class="container">
+    <section class="stats-bar reveal" style="margin-top:2rem;">
+      <div class="stats-bar-title">🐐 THE GOAT NUMBERS — ALL-TIME RECORDS</div>
+      <div class="stats-bar-grid">
+        <div class="stat-cell"><span class="stat-cell-num" data-count="920">0</span><div class="stat-cell-label">Total Goals</div></div>
+        <div class="stat-cell"><span class="stat-cell-num" data-count="255">0</span><div class="stat-cell-label">Assists</div></div>
+        <div class="stat-cell"><span class="stat-cell-num" data-count="1250">0</span><div class="stat-cell-label">Matches</div></div>
+        <div class="stat-cell"><span class="stat-cell-num" data-count="35">0</span><div class="stat-cell-label">Trophies</div></div>
+        <div class="stat-cell"><span class="stat-cell-num" data-count="5">0</span><div class="stat-cell-label">Ballon d'Or</div></div>
+        <div class="stat-cell"><span class="stat-cell-num" data-count="5">0</span><div class="stat-cell-label">UCL Titles</div></div>
+        <div class="stat-cell"><span class="stat-cell-num" data-count="132">0</span><div class="stat-cell-label">🇵🇹 Goals</div></div>
+        <div class="stat-cell"><span class="stat-cell-num" data-count="140">0</span><div class="stat-cell-label">UCL Goals</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
+        <div class="chart-card">
+          <h3>⚽ Goals by Club</h3>
+          <canvas id="clubGoalsChart" height="220"></canvas>
         </div>
-    </header>
+        <div class="chart-card">
+          <h3>📈 Goals per Season at Real Madrid</h3>
+          <canvas id="seasonChart" height="220"></canvas>
+        </div>
+      </div>
+    </section>
 
-    <main class="container">
-        <h1 style="margin:2rem 0;">📊 CR7 Career Stats</h1>
-        
-        <section class="stats-widget">
-            <h3>🐐 The GOAT Numbers</h3>
-            <div class="stats-grid">
-                <div class="stat-item"><div class="stat-number">920</div><div class="stat-label">Total Goals</div></div>
-                <div class="stat-item"><div class="stat-number">255</div><div class="stat-label">Assists</div></div>
-                <div class="stat-item"><div class="stat-number">1250</div><div class="stat-label">Matches</div></div>
-                <div class="stat-item"><div class="stat-number">35</div><div class="stat-label">Trophies</div></div>
-                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Ballon d'Or</div></div>
-                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">UCL Titles</div></div>
-            </div>
-        </section>
+    <section id="clubs" class="reveal">
+      <h2 class="section-title">🏟 Career Club Timeline</h2>
+      <div class="career-timeline" style="margin-top:1.5rem;">
+        <div class="timeline-item"><div><div class="timeline-club">🇵🇹 Sporting CP</div><div class="timeline-years">2002–2003 · 31 apps</div></div><div class="timeline-bar-bg"><div class="timeline-bar-fill" style="width:0%;background:var(--green-dark);" data-width="2%">5 goals</div></div></div>
+        <div class="timeline-item"><div><div class="timeline-club">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Manchester United</div><div class="timeline-years">2003–09, 21–22 · 346 apps</div></div><div class="timeline-bar-bg"><div class="timeline-bar-fill" style="width:0%;background:var(--red);" data-width="38%">145 goals</div></div></div>
+        <div class="timeline-item"><div><div class="timeline-club">🇪🇸 Real Madrid</div><div class="timeline-years">2009–2018 · 438 apps</div></div><div class="timeline-bar-bg"><div class="timeline-bar-fill" style="width:0%;background:#7B2D8B;" data-width="95%">450 goals</div></div></div>
+        <div class="timeline-item"><div><div class="timeline-club">🇮🇹 Juventus</div><div class="timeline-years">2018–2021 · 134 apps</div></div><div class="timeline-bar-bg"><div class="timeline-bar-fill" style="width:0%;background:#1a1a1a;" data-width="27%">101 goals</div></div></div>
+        <div class="timeline-item"><div><div class="timeline-club">🇸🇦 Al Nassr</div><div class="timeline-years">2023–Present · 75+ apps</div></div><div class="timeline-bar-bg"><div class="timeline-bar-fill" style="width:0%;background:#C89520;" data-width="18%">68+ goals</div></div></div>
+        <div class="timeline-item"><div><div class="timeline-club">🇵🇹 Portugal NT</div><div class="timeline-years">2003–2026 · 212 caps</div></div><div class="timeline-bar-bg"><div class="timeline-bar-fill" style="width:0%;background:var(--green);" data-width="33%">132 goals</div></div></div>
+      </div>
+    </section>
 
-        <section style="margin:3rem 0;">
-            <h2>🏟 Clubs Career</h2>
-            <table class="standings-table">
-                <thead><tr><th>Club</th><th>Years</th><th>Matches</th><th>Goals</th><th>Trophies</th></tr></thead>
-                <tbody>
-                    <tr><td>🇵🇹 Sporting CP</td><td>2002-2003</td><td>31</td><td>5</td><td>0</td></tr>
-                    <tr><td>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Man United</td><td>2003-2009, 2021-2022</td><td>346</td><td>145</td><td>10</td></tr>
-                    <tr><td>🇪🇸 Real Madrid</td><td>2009-2018</td><td>438</td><td>450</td><td>16</td></tr>
-                    <tr><td>🇮🇹 Juventus</td><td>2018-2021</td><td>134</td><td>101</td><td>5</td></tr>
-                    <tr><td>🇸🇦 Al Nassr</td><td>2023-Present</td><td>75+</td><td>68+</td><td>2</td></tr>
-                </tbody>
-            </table>
-        </section>
+    <section id="records" class="reveal">
+      <h2 class="section-title">🏆 Records That Will Never Be Broken</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1rem;margin-top:1.5rem;">
+        <div class="wc-card"><h4>🥅 All-Time Top Scorer</h4><p style="font-size:1.5rem;font-weight:900;color:var(--red)">920+</p><p style="color:var(--text-3);font-size:.83rem;">Official career goals — a record by a massive margin</p></div>
+        <div class="wc-card"><h4>🏆 UCL All-Time Scorer</h4><p style="font-size:1.5rem;font-weight:900;color:var(--red)">140</p><p style="color:var(--text-3);font-size:.83rem;">Champions League goals, 40+ ahead of 2nd place</p></div>
+        <div class="wc-card"><h4>🇵🇹 International Goals</h4><p style="font-size:1.5rem;font-weight:900;color:var(--red)">132</p><p style="color:var(--text-3);font-size:.83rem;">Most international goals in football history</p></div>
+        <div class="wc-card"><h4>🌍 World Cups</h4><p style="font-size:1.5rem;font-weight:900;color:var(--red)">6</p><p style="color:var(--text-3);font-size:.83rem;">Scored in every single World Cup he appeared in</p></div>
+        <div class="wc-card"><h4>🇪🇺 Euro Goals Record</h4><p style="font-size:1.5rem;font-weight:900;color:var(--red)">14</p><p style="color:var(--text-3);font-size:.83rem;">European Championship all-time top scorer</p></div>
+        <div class="wc-card"><h4>📅 Portugal Caps</h4><p style="font-size:1.5rem;font-weight:900;color:var(--red)">212</p><p style="color:var(--text-3);font-size:.83rem;">More than any other Portugal outfield player ever</p></div>
+      </div>
+    </section>
+  </main>
 
-        <section style="margin:3rem 0;">
-            <h2>🇵🇹 Portugal National Team</h2>
-            <table class="standings-table">
-                <thead><tr><th>Stat</th><th>Value</th></tr></thead>
-                <tbody>
-                    <tr><td>Caps</td><td>212</td></tr>
-                    <tr><td>Goals</td><td>132</td></tr>
-                    <tr><td>Debut</td><td>2003</td></tr>
-                    <tr><td>Trophies</td><td>🏆 Euro 2016, 🏆 Nations League 2019</td></tr>
-                    <tr><td>World Cup Appearances</td><td>5 (2006, 2010, 2014, 2018, 2022)</td></tr>
-                    <tr><td>World Cup Goals</td><td>8</td></tr>
-                </tbody>
-            </table>
-        </section>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">© 2026 CR7 – The Last Dance. Made with ❤️ by Zer Salah.</div>
+    </div>
+  </footer>
 
-        <section style="margin:3rem 0;">
-            <h2>🏆 Major Records</h2>
-            <table class="standings-table">
-                <thead><tr><th>Record</th><th>Detail</th></tr></thead>
-                <tbody>
-                    <tr><td>All-Time Top Scorer</td><td>920+ official goals</td></tr>
-                    <tr><td>UCL All-Time Top Scorer</td><td>140 goals</td></tr>
-                    <tr><td>International Goals</td><td>132 - Most in history</td></tr>
-                    <tr><td>Most International Caps</td><td>212 (active leader)</td></tr>
-                    <tr><td>Euro All-Time Top Scorer</td><td>14 goals</td></tr>
-                    <tr><td>World Cup Tournaments</td><td>5 (most by any player)</td></tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const textColor = isDark ? '#BBBBBB' : '#444';
+      const gridColor = isDark ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.06)';
+      Chart.defaults.color = textColor;
+      Chart.defaults.borderColor = gridColor;
 
-    <footer class="site-footer">
-        <div class="footer-bottom"><p>© 2025 CR7 - The Last Dance. Made with ❤️ by Zer Salah</p></div>
-    </footer>
+      new Chart(document.getElementById('clubGoalsChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Sporting', 'Man Utd', 'Real Madrid', 'Juventus', 'Al Nassr', 'Portugal'],
+          datasets: [{
+            label: 'Goals', data: [5, 145, 450, 101, 68, 132],
+            backgroundColor: ['#006600','#C8102E','#7B2D8B','#1a1a1a','#C89520','#006600'],
+            borderRadius: 6
+          }]
+        },
+        options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { grid: { color: gridColor } } } }
+      });
 
-    <script src="js/main.js"></script>
+      new Chart(document.getElementById('seasonChart'), {
+        type: 'line',
+        data: {
+          labels: ['09/10','10/11','11/12','12/13','13/14','14/15','15/16','16/17','17/18'],
+          datasets: [{
+            label: 'Goals', data: [33,40,60,55,51,61,51,42,44],
+            borderColor: '#C8102E', backgroundColor: 'rgba(200,16,46,.1)',
+            borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: '#C8102E',
+            fill: true, tension: .35
+          }]
+        },
+        options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { grid: { color: gridColor } } } }
+      });
+    });
+  </script>
 </body>
 </html>
