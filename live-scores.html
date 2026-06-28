@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Scores - CR7 - The Last Dance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐐</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span>🇵🇹</span> CR7<span class="logo-number">7</span> <span class="logo-text">The Last Dance</span>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="news.html">News</a>
+                <a href="live-scores.html" class="active">Live Scores</a>
+                <a href="world-cup.html">World Cup 2026</a>
+                <a href="stats.html">Stats</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="header-actions">
+                <select class="lang-switch" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="ar">🇸🇦 AR</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="pt">🇵🇹 PT</option>
+                    <option value="es">🇪🇸 ES</option>
+                </select>
+                <button class="dark-toggle" id="darkToggle">🌙</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 style="margin:2rem 0;">🔴 Live Match Center</h1>
+        
+        <section class="live-scores">
+            <div class="live-header"><span class="live-dot"></span> Portugal - World Cup 2026</div>
+            <iframe src="https://www.sofascore.com/team/football/portugal/303/embed" height="500" style="width:100%;border-radius:8px;border:none;"></iframe>
+        </section>
+        
+        <section class="live-scores">
+            <div class="live-header"><span class="live-dot"></span> Al Nassr - Saudi Pro League</div>
+            <iframe src="https://www.sofascore.com/team/football/al-nassr/2623/embed" height="500" style="width:100%;border-radius:8px;border:none;"></iframe>
+        </section>
+        
+        <section class="live-scores">
+            <div class="live-header">📅 Upcoming Matches</div>
+            <table class="schedule-table">
+                <thead><tr><th>Date</th><th>Match</th><th>Competition</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>TBD</td><td>🇵🇹 Portugal vs TBD</td><td>World Cup 2026</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
+                    <tr><td>TBD</td><td>🇵🇹 Portugal vs TBD</td><td>World Cup 2026</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
+                    <tr><td>TBD</td><td>🇵🇹 Portugal vs TBD</td><td>World Cup 2026</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom"><p>© 2025 CR7 - The Last Dance. Made with ❤️ by Zer Salah</p></div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
