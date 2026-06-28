@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR7 - The Last Dance</title>
+    <meta name="description" content="The Greatest of All Time. One Final World Cup. One GOAT.">
+    <meta name="keywords" content="Cristiano Ronaldo, CR7, Portugal, World Cup 2026, WC26, Al Nassr, Football, GOAT">
+    <meta name="author" content="Zer Salah">
+    <meta property="og:title" content="CR7 - The Last Dance">
+    <meta property="og:description" content="The Greatest of All Time. One Final World Cup. One GOAT.">
+    <meta property="og:url" content="https://cr7goat.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐐</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span>🇵🇹</span> CR7<span class="logo-number">7</span> <span class="logo-text">The Last Dance</span>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="active">Home</a>
+                <a href="news.html">News</a>
+                <a href="live-scores.html">Live Scores</a>
+                <a href="world-cup.html">World Cup 2026</a>
+                <a href="stats.html">Stats</a>
+                <a href="about.html">About</a>
+                <a href="live-scores.html" class="nav-cta">🔴 LIVE</a>
+            </nav>
+            <div class="header-actions">
+                <select class="lang-switch" id="langSwitch" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="ar">🇸🇦 AR</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="pt">🇵🇹 PT</option>
+                    <option value="es">🇪🇸 ES</option>
+                </select>
+                <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-player">7</div>
+            <h1>Cristiano Ronaldo</h1>
+            <p class="hero-subtitle">The Greatest of All Time. One Final World Cup. One GOAT.</p>
+            <span class="hero-badge">🏆 World Cup 2026 • USA, Canada, Mexico</span>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="stats-widget" id="statsWidget">
+            <h3>📊 Career Goals: <span id="totalGoals">920</span>+</h3>
+            <div class="stats-grid">
+                <div class="stat-item"><div class="stat-number">920</div><div class="stat-label">Goals</div></div>
+                <div class="stat-item"><div class="stat-number">255</div><div class="stat-label">Assists</div></div>
+                <div class="stat-item"><div class="stat-number">1250</div><div class="stat-label">Matches</div></div>
+                <div class="stat-item"><div class="stat-number">35</div><div class="stat-label">Trophies</div></div>
+                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Ballon d'Or</div></div>
+                <div class="stat-item"><div class="stat-number">132</div><div class="stat-label">Portugal Goals</div></div>
+            </div>
+        </section>
+
+        <div class="news-ticker">
+            <span class="ticker-label">🚨 BREAKING</span>
+            <div class="ticker-content">
+                <span>Ronaldo confirms 2026 will be his final World Cup • Portugal qualified for WC26 • CR7 scores hat-trick in Al Nassr friendly • Bruno Fernandes: "We fight for Ronaldo"</span>
+            </div>
+        </div>
+
+        <section>
+            <h2>📰 Latest News</h2>
+            <div class="posts-grid" id="postsGrid"><p style="text-align:center;padding:2rem;">Loading posts...</p></div>
+            <div class="pagination" id="pagination"></div>
+        </section>
+
+        <section class="live-scores">
+            <div class="live-header"><span class="live-dot"></span> Live Scores</div>
+            <div class="live-scores-grid">
+                <div><h4 style="text-align:center;">🇵🇹 Portugal</h4>
+                    <iframe src="https://www.sofascore.com/team/football/portugal/303/embed" height="400" style="width:100%;border-radius:8px;border:none;"></iframe>
+                </div>
+                <div><h4 style="text-align:center;">🟡 Al Nassr</h4>
+                    <iframe src="https://www.sofascore.com/team/football/al-nassr/2623/embed" height="400" style="width:100%;border-radius:8px;border:none;"></iframe>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:1rem;">
+                <a href="live-scores.html" class="btn-primary">📺 View Full Live Center →</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>🏆 Road to World Cup 2026</h2>
+            <div class="wc-preview-grid">
+                <div class="wc-card"><h4>🇵🇹 Portugal Group</h4><p style="color:var(--text-light);">Draw TBD</p><a href="world-cup.html" class="btn-link">View Groups →</a></div>
+                <div class="wc-card"><h4>📅 Fixtures</h4><p style="color:var(--text-light);">Schedule TBD</p><a href="world-cup.html" class="btn-link">View Schedule →</a></div>
+                <div class="wc-card"><h4>🏟 Tournament Bracket</h4><p style="color:var(--text-light);">Path to Final</p><a href="world-cup.html" class="btn-link">View Bracket →</a></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📱 CR7 Social Feed</h2>
+            <div class="social-feed">
+                <div class="social-embed">
+                    <a class="twitter-timeline" href="https://twitter.com/Cristiano" data-height="500">Tweets by @Cristiano</a>
+                    <script async src="https://platform.twitter.com/widgets.js"></script>
+                </div>
+                <div class="social-embed instagram-placeholder">
+                    <span style="font-size:4rem;">📷</span>
+                    <a href="https://instagram.com/cristiano" target="_blank" class="btn-instagram">Follow @cristiano</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div><h4>CR7 - The Last Dance</h4><p>The Greatest of All Time. One Final World Cup. One GOAT.</p></div>
+            <div><h4>Quick Links</h4><p><a href="news.html">News</a></p><p><a href="live-scores.html">Live Scores</a></p><p><a href="world-cup.html">World Cup 2026</a></p><p><a href="stats.html">Stats</a></p></div>
+            <div><h4>Ronaldo</h4><p><a href="stats.html">Career Stats</a></p><p><a href="stats.html">Records</a></p><p><a href="stats.html">Clubs</a></p></div>
+            <div><h4>Connect</h4><p><a href="https://twitter.com/Cristiano">𝕏 Twitter</a></p><p><a href="https://instagram.com/cristiano">📷 Instagram</a></p></div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 CR7 - The Last Dance. Made with ❤️ by Zer Salah</p></div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
