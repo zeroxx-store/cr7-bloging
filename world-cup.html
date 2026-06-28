@@ -1,87 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Cup 2026 - CR7 - The Last Dance</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐐</text></svg>">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Cup 2026 – CR7 The Last Dance</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇹</text></svg>">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">
-                <span>🇵🇹</span> CR7<span class="logo-number">7</span> <span class="logo-text">The Last Dance</span>
-            </a>
-            <nav class="main-nav" id="mainNav">
-                <a href="index.html">Home</a>
-                <a href="news.html">News</a>
-                <a href="live-scores.html">Live Scores</a>
-                <a href="world-cup.html" class="active">World Cup 2026</a>
-                <a href="stats.html">Stats</a>
-                <a href="about.html">About</a>
-            </nav>
-            <div class="header-actions">
-                <select class="lang-switch" onchange="changeLanguage(this.value)">
-                    <option value="en">🇬🇧 EN</option>
-                    <option value="ar">🇸🇦 AR</option>
-                    <option value="fr">🇫🇷 FR</option>
-                    <option value="pt">🇵🇹 PT</option>
-                    <option value="es">🇪🇸 ES</option>
-                </select>
-                <button class="dark-toggle" id="darkToggle">🌙</button>
-                <button class="menu-toggle" id="menuToggle">☰</button>
-            </div>
-        </div>
-    </header>
+  <div id="progress-bar"></div>
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo"><span class="logo-flag">🇵🇹</span> CR7 <span class="logo-badge">7</span> The Last Dance</a>
+      <div class="header-top-right">
+        <select class="lang-select" id="langSelect"><option value="en">🇬🇧 EN</option><option value="ar">🇸🇦 AR</option><option value="fr">🇫🇷 FR</option><option value="pt">🇵🇹 PT</option><option value="es">🇪🇸 ES</option></select>
+        <button class="icon-btn" id="darkBtn">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+    <nav class="header-nav" id="mainNav">
+      <a href="index.html">Home</a><a href="news.html">News</a><a href="live-scores.html">Live Scores</a><a href="world-cup.html" class="active">World Cup 2026</a><a href="stats.html">Stats</a><a href="about.html">About</a>
+      <a href="live-scores.html" class="nav-live">🔴 LIVE</a>
+    </nav>
+  </header>
 
-    <main class="container">
-        <h1 style="margin:2rem 0;">🏆 World Cup 2026</h1>
-        <p style="color:var(--text-light);margin-bottom:2rem;">Hosts: USA 🇺🇸 • Canada 🇨🇦 • Mexico 🇲🇽 | 48 Teams | June 11 - July 19, 2026</p>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>🇵🇹 Portugal Group</h2>
-            <p style="color:var(--text-light);margin-bottom:1rem;">Official draw to be announced</p>
-            <table class="standings-table">
-                <thead><tr><th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
-                <tbody>
-                    <tr class="highlight-row"><td>1</td><td>🇵🇹 Portugal</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-                    <tr><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-                    <tr><td>3</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-                    <tr><td>4</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-                </tbody>
-            </table>
-        </section>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>📅 Portugal Fixtures</h2>
-            <table class="schedule-table">
-                <thead><tr><th>Date</th><th>Match</th><th>Venue</th><th>Stage</th><th>Status</th></tr></thead>
-                <tbody>
-                    <tr><td>TBD</td><td>🇵🇹 Portugal vs TBD</td><td>TBD</td><td>Group Stage</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
-                    <tr><td>TBD</td><td>🇵🇹 Portugal vs TBD</td><td>TBD</td><td>Group Stage</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
-                    <tr><td>TBD</td><td>🇵🇹 Portugal vs TBD</td><td>TBD</td><td>Group Stage</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
-                </tbody>
-            </table>
-        </section>
-        
-        <section style="margin-bottom:3rem;">
-            <h2>🏟 Tournament Bracket</h2>
-            <div class="bracket">
-                <div class="round"><div class="round-title">Round of 32</div><div class="match">TBD</div><div class="match">TBD</div></div>
-                <div class="round"><div class="round-title">Round of 16</div><div class="match">TBD</div></div>
-                <div class="round"><div class="round-title">Quarter-Finals</div><div class="match">TBD</div></div>
-                <div class="round"><div class="round-title">Semi-Finals</div><div class="match">TBD</div></div>
-                <div class="round"><div class="round-title">🏆 Final</div><div class="match">TBD</div></div>
-            </div>
-        </section>
-    </main>
+  <div class="flag-stripe"><div class="s-green"></div><div class="s-red"></div></div>
+  <div style="background:linear-gradient(135deg,var(--green-dark),var(--red-dark));color:#fff;padding:3rem 1.5rem;text-align:center;">
+    <h1 style="font-size:2rem;font-weight:900;margin-bottom:.5rem;">🏆 World Cup 2026</h1>
+    <p style="opacity:.85;">Portugal's Road to Glory — CR7's Final Dance on the Biggest Stage</p>
+  </div>
+  <div class="flag-stripe"><div class="s-green"></div><div class="s-red"></div></div>
 
-    <footer class="site-footer">
-        <div class="footer-bottom"><p>© 2025 CR7 - The Last Dance. Made with ❤️ by Zer Salah</p></div>
-    </footer>
+  <div class="countdown-section">
+    <div class="countdown-label">⏱ World Cup 2026 Kicks Off In</div>
+    <div class="countdown-grid">
+      <div class="countdown-item"><span class="countdown-num" id="cd-days">--</span><div class="countdown-unit">Days</div></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-hours">--</span><div class="countdown-unit">Hours</div></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-mins">--</span><div class="countdown-unit">Mins</div></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-secs">--</span><div class="countdown-unit">Secs</div></div>
+    </div>
+  </div>
 
-    <script src="js/main.js"></script>
+  <main class="container">
+    <!-- GROUP E -->
+    <section class="reveal">
+      <h2 class="section-title">🇵🇹 Group E — Portugal</h2>
+      <div style="overflow-x:auto;margin-top:1.5rem;">
+        <table class="group-table">
+          <thead>
+            <tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+          </thead>
+          <tbody>
+            <tr class="portugal-row"><td>🇵🇹 Portugal</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>🇨🇿 Czech Republic</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>🇹🇷 Turkey</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>🇪🇬 Egypt</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FIXTURES -->
+    <section class="reveal">
+      <h2 class="section-title">📅 Portugal Fixtures</h2>
+      <div style="overflow-x:auto;margin-top:1.5rem;">
+        <table class="fixtures-table">
+          <thead><tr><th>Date</th><th>Match</th><th>Venue</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>June 14, 2026</td><td class="fixture-teams">🇵🇹 Portugal <span class="fixture-vs">vs</span> 🇨🇿 Czech Republic</td><td>Arrowhead Stadium, Kansas City</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
+            <tr><td>June 18, 2026</td><td class="fixture-teams">🇹🇷 Turkey <span class="fixture-vs">vs</span> 🇵🇹 Portugal</td><td>SoFi Stadium, Los Angeles</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
+            <tr><td>June 22, 2026</td><td class="fixture-teams">🇵🇹 Portugal <span class="fixture-vs">vs</span> 🇪🇬 Egypt</td><td>MetLife Stadium, New York</td><td><span class="match-status upcoming">Upcoming</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SQUAD -->
+    <section id="squad" class="reveal">
+      <h2 class="section-title">👥 Portugal Squad 2026</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:1.5rem;">
+        <div class="wc-card"><h4>CR7 · #7</h4><p>⚽ Forward<br>🇸🇦 Al Nassr<br>Age: 41</p></div>
+        <div class="wc-card"><h4>Bruno Fernandes · #8</h4><p>⚽ Midfielder<br>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Man United<br>Age: 31</p></div>
+        <div class="wc-card"><h4>Rafael Leão · #11</h4><p>⚽ Forward<br>🇮🇹 AC Milan<br>Age: 26</p></div>
+        <div class="wc-card"><h4>Bernardo Silva · #10</h4><p>⚽ Midfielder<br>🇪🇸 Man City<br>Age: 31</p></div>
+        <div class="wc-card"><h4>João Neves · #16</h4><p>⚽ Midfielder<br>🇫🇷 PSG<br>Age: 20</p></div>
+        <div class="wc-card"><h4>Rúben Dias · #6</h4><p>🛡 Defender<br>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Man City<br>Age: 27</p></div>
+        <div class="wc-card"><h4>Diogo Costa · #1</h4><p>🧤 Goalkeeper<br>🇵🇹 Porto<br>Age: 25</p></div>
+        <div class="wc-card"><h4>Nuno Mendes · #5</h4><p>🛡 Defender<br>🇫🇷 PSG<br>Age: 22</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">© 2026 CR7 – The Last Dance. Made with ❤️ by Zer Salah.</div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
