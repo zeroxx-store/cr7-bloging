@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - CR7 - The Last Dance</title>
+    <meta name="description" content="Latest news about Cristiano Ronaldo, Portugal, and World Cup 2026">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐐</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span>🇵🇹</span> CR7<span class="logo-number">7</span> <span class="logo-text">The Last Dance</span>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="news.html" class="active">News</a>
+                <a href="live-scores.html">Live Scores</a>
+                <a href="world-cup.html">World Cup 2026</a>
+                <a href="stats.html">Stats</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="header-actions">
+                <select class="lang-switch" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="ar">🇸🇦 AR</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="pt">🇵🇹 PT</option>
+                    <option value="es">🇪🇸 ES</option>
+                </select>
+                <button class="dark-toggle" id="darkToggle">🌙</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 style="margin:2rem 0;">📰 All News</h1>
+        
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;" id="categoryFilter">
+            <button class="btn-filter active" onclick="filterPosts('all')">All</button>
+            <button class="btn-filter" onclick="filterPosts('World Cup 2026')">World Cup 2026</button>
+            <button class="btn-filter" onclick="filterPosts('Match Report')">Match Reports</button>
+            <button class="btn-filter" onclick="filterPosts('Analysis')">Analysis</button>
+            <button class="btn-filter" onclick="filterPosts('Transfer')">Transfers</button>
+        </div>
+        
+        <div class="posts-grid" id="postsGrid">
+            <p style="text-align:center;padding:2rem;">Loading posts...</p>
+        </div>
+        <div class="pagination" id="pagination"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>© 2025 CR7 - The Last Dance. Made with ❤️ by Zer Salah</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        let allPosts = [];
+        let currentFilter = 'all';
+        
+        async function loadAllPosts() {
+            try {
+                const response = await fetch('data/posts.json');
+                const data = await response.json();
+                allPosts = data.posts || [];
+                renderFilteredPosts();
+            } catch (error) {
+                document.getElementById('postsGrid').innerHTML = '<p>Error loading posts.</p>';
+            }
+        }
+        
+        function filterPosts(category) {
+            currentFilter = category;
+            document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderFilteredPosts();
+        }
+        
+        function renderFilteredPosts() {
+            const lang = localStorage.getItem('lang') || 'en';
+            const grid = document.getElementById('postsGrid');
+            let filtered = currentFilter === 'all' ? allPosts : allPosts.filter(p => p.category === currentFilter);
+            const langPosts = filtered.filter(p => p.lang === lang);
+            const displayPosts = langPosts.length > 0 ? langPosts : filtered;
+            
+            if (displayPosts.length === 0) {
+                grid.innerHTML = '<p style="text-align:center;padding:2rem;">No posts in this category.</p>';
+                return;
+            }
+            
+            grid.innerHTML = displayPosts.map(post => `
+                <article class="post-card">
+                    <img src="${post.image || 'images/default-post.jpg'}" alt="${post.title}" class="card-image" loading="lazy" onerror="this.style.display='none'">
+                    <div class="card-body">
+                        <span class="card-category">${post.category || 'News'}</span>
+                        <h3 class="card-title"><a href="article.html?id=${post.id}">${post.title}</a></h3>
+                        <p class="card-excerpt">${post.excerpt || ''}</p>
+                        <div class="card-meta">
+                            <span>📅 ${post.date || ''}</span>
+                            <span>⏱ ${post.readTime || '3'} min</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadAllPosts);
+    </script>
+</body>
+</html>
