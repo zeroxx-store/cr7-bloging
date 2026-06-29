@@ -622,3 +622,230 @@ section { margin: 3rem 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ===== HARD-LEVEL ANIMATIONS & EFFECTS ===== */
+
+/* Page load fade in */
+body { animation: page-fade-in .4s ease; }
+@keyframes page-fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── HERO PARTICLE CANVAS ── */
+#hero-particles {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+}
+
+/* ── HERO text entrance ── */
+.hero-eyebrow  { animation: slide-up .5s ease .1s both; }
+.hero h1       { animation: slide-up .55s ease .2s both; }
+.hero-sub      { animation: slide-up .55s ease .35s both; }
+.hero-ctas     { animation: slide-up .55s ease .45s both; }
+.hero-stats    { animation: slide-up .55s ease .55s both; }
+.hero-number   { animation: hero-num-in .7s cubic-bezier(.34,1.56,.64,1) .2s both; }
+.hero-flag-badge { animation: slide-up .5s ease .6s both; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-num-in {
+  from { opacity: 0; transform: scale(.6) rotate(-8deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* ── FLAG STRIPE ANIMATION ── */
+.flag-stripe .s-green { animation: stripe-grow .6s ease both; transform-origin: left; }
+.flag-stripe .s-red   { animation: stripe-grow .6s ease .1s both; transform-origin: left; }
+@keyframes stripe-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ── TICKER ── */
+.ticker-wrap { border-top: 2px solid rgba(255,255,255,.15); border-bottom: 2px solid rgba(255,255,255,.15); }
+
+/* ── COUNTDOWN pulse ── */
+.countdown-num {
+  display: inline-block;
+  transition: transform .15s cubic-bezier(.34,1.56,.64,1);
+}
+.countdown-num.tick { transform: scale(1.18); }
+
+/* ── STATS BAR counter glow ── */
+.stat-cell-num {
+  transition: text-shadow .3s;
+  display: block;
+}
+.stat-cell-num.done {
+  text-shadow: 0 0 20px rgba(255,215,0,.5);
+  animation: num-pop .35s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes num-pop { 0%{transform:scale(1)} 50%{transform:scale(1.18)} 100%{transform:scale(1)} }
+
+/* ── SCROLL REVEAL upgrades ── */
+.reveal          { opacity: 0; transform: translateY(30px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible  { opacity: 1; transform: none; }
+.reveal-left     { opacity: 0; transform: translateX(-40px); transition: opacity .65s ease, transform .65s ease; }
+.reveal-left.visible  { opacity: 1; transform: none; }
+.reveal-right    { opacity: 0; transform: translateX(40px); transition: opacity .65s ease, transform .65s ease; }
+.reveal-right.visible { opacity: 1; transform: none; }
+.reveal-scale    { opacity: 0; transform: scale(.88); transition: opacity .55s ease, transform .55s cubic-bezier(.34,1.56,.64,1); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Stagger delay for grid children */
+.posts-grid .post-card:nth-child(1)  { transition-delay: .05s; }
+.posts-grid .post-card:nth-child(2)  { transition-delay: .1s; }
+.posts-grid .post-card:nth-child(3)  { transition-delay: .15s; }
+.posts-grid .post-card:nth-child(4)  { transition-delay: .2s; }
+.posts-grid .post-card:nth-child(5)  { transition-delay: .25s; }
+.posts-grid .post-card:nth-child(6)  { transition-delay: .3s; }
+.posts-grid .post-card:nth-child(7)  { transition-delay: .35s; }
+.posts-grid .post-card:nth-child(8)  { transition-delay: .4s; }
+.posts-grid .post-card:nth-child(9)  { transition-delay: .45s; }
+.wc-grid .wc-card:nth-child(1) { transition-delay: .05s; }
+.wc-grid .wc-card:nth-child(2) { transition-delay: .12s; }
+.wc-grid .wc-card:nth-child(3) { transition-delay: .19s; }
+.wc-grid .wc-card:nth-child(4) { transition-delay: .26s; }
+
+/* ── POST CARD HOVER glow ── */
+.post-card {
+  position: relative; overflow: hidden;
+}
+.post-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(200,16,46,.04), rgba(0,102,0,.04));
+  opacity: 0; transition: opacity .3s;
+  pointer-events: none;
+}
+.post-card:hover::after { opacity: 1; }
+
+.post-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(200,16,46,.14), 0 4px 12px rgba(0,0,0,.1);
+}
+
+/* ── NAV active indicator slide ── */
+.header-nav a { position: relative; overflow: hidden; }
+.header-nav a::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; right: 50%;
+  height: 3px; background: var(--gold);
+  transition: left .25s ease, right .25s ease;
+}
+.header-nav a:hover::after, .header-nav a.active::after { left: 0; right: 0; }
+
+/* ── BUTTON ripple ── */
+.btn-primary, .btn-secondary {
+  position: relative; overflow: hidden;
+}
+.btn-primary::before, .btn-secondary::before {
+  content: ''; position: absolute;
+  width: 0; height: 0; border-radius: 50%;
+  background: rgba(255,255,255,.3);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  transition: width .45s ease, height .45s ease, opacity .45s ease;
+  opacity: 0;
+}
+.btn-primary:active::before, .btn-secondary:active::before {
+  width: 250px; height: 250px; opacity: 1;
+}
+
+/* ── CARD IMAGE shimmer on load ── */
+.card-img-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.08) 50%, transparent 100%);
+  transform: translateX(-100%); z-index: 1; pointer-events: none;
+  animation: img-shimmer 2s ease 1s forwards;
+}
+@keyframes img-shimmer {
+  0%   { transform: translateX(-100%); opacity: 1; }
+  100% { transform: translateX(100%);  opacity: 0; }
+}
+
+/* ── LIVE dot pulse (upgraded) ── */
+.live-dot {
+  position: relative;
+}
+.live-dot::after {
+  content: ''; position: absolute; inset: -4px;
+  border-radius: 50%; background: var(--gold);
+  animation: live-ring 1.5s ease-out infinite; opacity: 0;
+}
+@keyframes live-ring {
+  0%   { transform: scale(.8); opacity: .7; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ── SECTION TITLE underline draw ── */
+.section-title { position: relative; display: inline-flex; }
+
+/* ── WC CARD hover ── */
+.wc-card {
+  position: relative; overflow: hidden;
+}
+.wc-card::before {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--red));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s ease;
+}
+.wc-card:hover::before { transform: scaleX(1); }
+
+/* ── LOGO hover ── */
+.logo { transition: opacity .2s; }
+.logo:hover { opacity: .85; }
+.logo-badge {
+  animation: badge-spin 8s linear infinite;
+  display: inline-flex;
+}
+@keyframes badge-spin {
+  0%,90%,100% { transform: rotate(0deg) scale(1); }
+  95%          { transform: rotate(360deg) scale(1.15); }
+}
+
+/* ── NOTIF badge bounce ── */
+.notif-badge { animation: badge-bounce 2.5s ease infinite; }
+@keyframes badge-bounce {
+  0%,80%,100% { transform: scale(1); }
+  40%         { transform: scale(1.25); }
+}
+
+/* ── TIMELINE BAR entrance ── */
+.timeline-bar-fill {
+  position: relative; overflow: hidden;
+}
+.timeline-bar-fill::after {
+  content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 30px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25));
+  animation: bar-sheen 2s ease 1.5s 1;
+}
+@keyframes bar-sheen { 0%{right:100%} 100%{right:-30px} }
+
+/* ── CHATBOT window pop-in ── */
+.chatbot-window.open {
+  animation: chat-pop .3s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes chat-pop {
+  from { opacity: 0; transform: scale(.88) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── NOTIF drawer slide ── */
+.notif-drawer.open {
+  animation: notif-slide .25s ease;
+}
+@keyframes notif-slide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SCROLL PROGRESS gradient border at top ── */
+#progress-bar {
+  background: linear-gradient(90deg, var(--green) 0%, var(--gold) 50%, var(--red) 100%);
+  box-shadow: 0 0 8px rgba(255,215,0,.4);
+}
+
+/* ── FOOTER link hover ── */
+.footer-grid a { position: relative; padding-left: 0; transition: padding-left .2s, color .2s; }
+.footer-grid a:hover { padding-left: 8px; }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
