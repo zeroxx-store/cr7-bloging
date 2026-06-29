@@ -49,11 +49,11 @@
 
     <section>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
-        <div class="chart-card">
+        <div class="chart-card reveal">
           <h3>⚽ Goals by Club</h3>
           <canvas id="clubGoalsChart" height="220"></canvas>
         </div>
-        <div class="chart-card">
+        <div class="chart-card reveal">
           <h3>📈 Goals per Season at Real Madrid</h3>
           <canvas id="seasonChart" height="220"></canvas>
         </div>
@@ -92,6 +92,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
